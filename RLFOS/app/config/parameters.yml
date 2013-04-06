@@ -1,0 +1,15 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: rlfosdb
+    database_user: root
+    database_password: dov--nmr
+    mailer_transport: smtp
+    mailer_host: smtp.gmail.com
+    mailer_user: for.rl.tests
+    mailer_password: 4vtda9d9wl
+    mailer_port: 465
+    locale: en
+    secret: 6106c5c2e05816232353de8902406ac16
+    database_path: null

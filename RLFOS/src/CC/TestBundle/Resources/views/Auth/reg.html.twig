@@ -1,0 +1,59 @@
+{% extends "CCTestBundle::base.html.twig" %}
+
+{% block title %}Registration form page{% endblock %}
+
+{% block meta_content %}Страница формы регистрации{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/cctest/css/reg.css') }}" type="text/css" media="screen, projection">
+{% endblock %}
+
+{% block content %}
+<form class="reg_form" action="{{ path('reg') }}" method="post" {{ form_enctype(form) }}>
+	<fieldset>
+		<legend>Регистрационная информация</legend>
+		<div class="fieldbox_item">
+			<label for="login">Логин:</label>
+			<input type="text" name="login" id="login">
+			<input type="button" name="check_login" value="Проверить">
+		</div>
+		<div class="fieldbox_item">
+			{{ form_label(form.password)  }}
+			{{ form_errors(form.password) }}
+			{{ form_widget(form.password) }}
+		</div>
+{#		<div class="fieldbox_item">
+			<label for="password">Пароль:</label>
+			<input type="password" name="password" id="password">
+		</div>
+#}
+		<div class="fieldbox_item">
+			<label for="password_confirm">Пароль (подтверждение):</label>
+			<input type="password" name="password_confirm" id="password_confirm">
+		</div>
+		<div class="fieldbox_item">
+			<label for="email">e-mail:</label>
+			<input type="text" name="email" id="email">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Персональные данные</legend>
+		<div class="fieldbox_item">
+			<label for="secondname">Фамилия:</label>
+			<input type="text" name="secondname" id="secondname">
+		</div>
+		<div class="fieldbox_item">
+			<label for="firstname">Имя:</label>
+			<input type="text" name="firstname" id="firstname">
+		</div>
+		<div class="fieldbox_item">
+			<label for="patronymic">Отчество:</label>
+			<input type="text" name="patronymic" id="patronymic">
+		</div>
+	</fieldset>
+	<p>
+		<input type="submit" name="submitbtn" value="Продолжить регистрацию">
+		<input type="reset" name="resetbtn" value="Сброс введенных данных">
+	</p>
+</form>
+{% endblock %}

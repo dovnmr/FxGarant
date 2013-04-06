@@ -1,0 +1,53 @@
+.login_form fieldset {
+	width: 270px;
+	height: 165px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(122,122,122,0.5);
+	background-color: #F0F0FF;
+	border: 1px solid #E3E3FD;
+	margin: 200px auto 100px;
+	padding: 20px;
+	text-align: left;
+	line-height: 10px;
+}
+
+.login_form legend {
+	padding: 5px 10px;
+	background-color: white;
+	border: 1px solid #E3E3FD;
+	font-weight: bold;
+	color: gray;
+	border-radius: 5px;
+}
+
+.login_form_item label, .login_form_item input {
+	vertical-align: middle;
+	margin: 6px;
+	padding: 4px;
+}
+
+	.login_form_item label {
+		display: block;
+		float: left;
+		cursor: pointer;
+		font-weight: bolder;
+		width: 70px;
+		margin-top: 11px;
+		margin-left: 5px;
+	}
+	
+	.login_form_item input {
+		width: 153px;
+	}
+	
+.login_form p {
+	margin: 5px 0;
+	text-align: center;
+}
+
+.login_form p input {
+	vertical-align: middle;
+	margin: 6px;
+	padding: 4px;
+	width: 140px;
+}

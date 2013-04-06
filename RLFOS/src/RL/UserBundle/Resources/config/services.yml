@@ -1,0 +1,7 @@
+parameters:
+#    rl_user.example.class: RL\UserBundle\Example
+
+services:
+#    rl_user.example:
+#        class: %rl_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

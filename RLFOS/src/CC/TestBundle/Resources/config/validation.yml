@@ -1,0 +1,29 @@
+## YAML Template.
+---
+CC\TestBundle\Entity\User:
+  properties:
+    login:
+      - NotBlank: ~
+      - Length:
+          min: 5
+          max: 30
+          minMessage: "Your login must be at least {{ limit }} characters length"
+          maxMessage: "Your login cannot be longer than than {{ limit }} characters length"
+    password:
+      - NotBlank: ~
+      - Length:
+          min: 7
+          max: 15
+          minMessage: "Your password must be at least {{ limit }} characters length"
+          maxMessage: "Your password cannot be longer than than {{ limit }} characters length"
+    email:
+      - NotBlank: ~
+      - Email:
+          message: The email "{{ value }}" is not a valid email.
+          checkMX: true
+    secondname:
+      - NotBlank: ~
+    firstname:
+      - NotBlank: ~
+    patronymic:
+      - NotBlank: ~

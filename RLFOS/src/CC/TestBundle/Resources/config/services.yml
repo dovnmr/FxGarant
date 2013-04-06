@@ -1,0 +1,7 @@
+parameters:
+#    cc_test.example.class: CC\TestBundle\Example
+
+services:
+#    cc_test.example:
+#        class: %cc_test.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

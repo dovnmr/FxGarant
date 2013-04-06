@@ -1,0 +1,4 @@
+date: 20.03.2013 11:50
+author: Makarov Oleg
+goal: make a project of user authentication
+

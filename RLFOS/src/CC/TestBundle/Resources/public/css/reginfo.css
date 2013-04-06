@@ -1,0 +1,18 @@
+.reg_info {
+	border: 1px solid lightgray;
+	width: 530px;
+	margin: 20px auto;
+	padding: 0 10px;
+}
+
+.exit_form {
+	text-align: right;
+}
+
+.reg_info_item {
+	height: 25px;
+}
+
+.reg_info_item span {
+	margin-left: 170px;
+}

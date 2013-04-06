@@ -1,0 +1,8 @@
+rl_user:
+    resource: "@RLUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+#cc_test:
+#    resource: "@CCTestBundle/Resources/config/routing.yml"
+#    prefix:   /
+

@@ -1,0 +1,15 @@
+cc_test_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: CCTestBundle:Default:index }
+
+reg:
+    pattern: auth/reg
+    defaults: { _controller: CCTestBundle:Auth:reg }
+
+login:
+    pattern: auth/login
+    defaults: { _controller: CCTestBundle:Auth:login }
+
+userinfo:
+    pattern: auth/userinfo
+    defaults: { _controller: CCTestBundle:Auth:userinfo }

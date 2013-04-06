@@ -1,0 +1,63 @@
+.reg_form {
+	border: 1px solid lightgray;
+	width: 530px;
+	margin: 20px auto;
+	padding: 0 10px;
+}
+
+.reg_form legend {
+	padding: 5px;
+	border-bottom: 2px solid gray;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.reg_form fieldset {
+	border: 1px dotted gray;
+	margin: 10px;
+	padding: 20px;
+	text-align: left;
+/*	line-height: 10px;*/
+}
+
+.reg_form fieldset:hover {
+	border: 1px solid gray;
+}
+
+.fieldbox_item:hover {
+	background-color: #EBEBEB;
+}
+
+.fieldbox_item label, .fieldbox_item input {
+	vertical-align: middle;
+	margin: 3px;
+	padding: 2px;
+}
+
+	.fieldbox_item label {
+		display: block;
+		float: left;
+		cursor: pointer;
+		width: 170px;
+/*		margin-top: 11px;
+		margin-left: 5px;*/
+	}
+	
+	.fieldbox_item input {
+		width: 185px;
+	}
+	
+	.fieldbox_item input[name="check_login"] {
+		width: 75px;
+	}
+
+.reg_form p {
+	text-align: right;
+	margin: 10px 0;
+}
+
+.reg_form p input {
+	vertical-align: middle;
+	margin: 6px;
+	padding: 4px;
+}
