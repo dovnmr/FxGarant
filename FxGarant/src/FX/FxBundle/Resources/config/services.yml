@@ -1,0 +1,7 @@
+parameters:
+#    fx_fx.example.class: FX\FxBundle\Example
+
+services:
+#    fx_fx.example:
+#        class: %fx_fx.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

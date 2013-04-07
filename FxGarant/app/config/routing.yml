@@ -1,0 +1,4 @@
+fx_fx:
+    resource: "@FXFxBundle/Resources/config/routing.yml"
+    prefix:   /
+
