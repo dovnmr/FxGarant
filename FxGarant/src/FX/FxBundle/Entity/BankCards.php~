@@ -1,0 +1,70 @@
+<?php
+
+namespace FX\FxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BankCards
+ *
+ * @ORM\Table(name="bank_cards")
+ * @ORM\Entity
+ */
+class BankCards
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="number_card", type="integer", nullable=true)
+     */
+    private $numberCard;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="city", type="integer", nullable=true)
+     */
+    private $city;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mfo", type="integer", nullable=true)
+     */
+    private $mfo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="okpo", type="integer", nullable=true)
+     */
+    private $okpo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="iin", type="integer", nullable=true)
+     */
+    private $iin;
+
+    /**
+     * @var \Users
+     *
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
+
+
+}

@@ -1,0 +1,132 @@
+<?php
+
+namespace FX\FxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * InvAccount
+ *
+ * @ORM\Table(name="inv_account")
+ * @ORM\Entity
+ */
+class InvAccount
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regdate", type="date", nullable=true)
+     */
+    private $regdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="actvated_date", type="date", nullable=true)
+     */
+    private $actvatedDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status_inv", type="integer", nullable=true)
+     */
+    private $statusInv;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="min_balance", type="float", nullable=true)
+     */
+    private $minBalance;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="state_preterm", type="integer", nullable=true)
+     */
+    private $statePreterm;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="state_all_and_close", type="integer", nullable=true)
+     */
+    private $stateAllAndClose;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="investor_input", type="float", nullable=true)
+     */
+    private $investorInput;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="investor_withdraw", type="float", nullable=true)
+     */
+    private $investorWithdraw;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="investor_insured", type="float", nullable=true)
+     */
+    private $investorInsured;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status_delete", type="integer", nullable=true)
+     */
+    private $statusDelete;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="lock_money", type="float", nullable=true)
+     */
+    private $lockMoney;
+
+    /**
+     * @var \MtAccounts
+     *
+     * @ORM\ManyToOne(targetEntity="MtAccounts")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="mt_login", referencedColumnName="mt_login")
+     * })
+     */
+    private $mtLogin;
+
+    /**
+     * @var \TypesAccounts
+     *
+     * @ORM\ManyToOne(targetEntity="TypesAccounts")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_account", referencedColumnName="id")
+     * })
+     */
+    private $typeAccount;
+
+    /**
+     * @var \Users
+     *
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
+
+
+}

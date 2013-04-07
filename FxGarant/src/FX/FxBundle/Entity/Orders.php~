@@ -1,0 +1,89 @@
+<?php
+
+namespace FX\FxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Orders
+ *
+ * @ORM\Table(name="orders")
+ * @ORM\Entity
+ */
+class Orders
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="sum", type="float", nullable=true)
+     */
+    private $sum;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status_order", type="integer", nullable=true)
+     */
+    private $statusOrder;
+
+    /**
+     * @var \TypeOrder
+     *
+     * @ORM\ManyToOne(targetEntity="TypeOrder")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_order", referencedColumnName="id")
+     * })
+     */
+    private $typeOrder;
+
+    /**
+     * @var \Users
+     *
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
+
+    /**
+     * @var \PammAccount
+     *
+     * @ORM\ManyToOne(targetEntity="PammAccount")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_account_pamm", referencedColumnName="id")
+     * })
+     */
+    private $idAccountPamm;
+
+    /**
+     * @var \MtAccounts
+     *
+     * @ORM\ManyToOne(targetEntity="MtAccounts")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="mt_login_trader", referencedColumnName="mt_login")
+     * })
+     */
+    private $mtLoginTrader;
+
+    /**
+     * @var \MtAccounts
+     *
+     * @ORM\ManyToOne(targetEntity="MtAccounts")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="mt_login_inv", referencedColumnName="mt_login")
+     * })
+     */
+    private $mtLoginInv;
+
+
+}

@@ -1,0 +1,91 @@
+<?php
+
+namespace FX\FxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Payments
+ *
+ * @ORM\Table(name="payments")
+ * @ORM\Entity
+ */
+class Payments
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="summ", type="float", nullable=true)
+     */
+    private $summ;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comments", type="string", length=32, nullable=true)
+     */
+    private $comments;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="type_payment", type="integer", nullable=true)
+     */
+    private $typePayment;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="transaction_id", type="integer", nullable=true)
+     */
+    private $transactionId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="baggage", type="text", nullable=true)
+     */
+    private $baggage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="code", type="integer", nullable=true)
+     */
+    private $code;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="result", type="integer", nullable=true)
+     */
+    private $result;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_time", type="date", nullable=true)
+     */
+    private $dateTime;
+
+    /**
+     * @var \MtAccounts
+     *
+     * @ORM\ManyToOne(targetEntity="MtAccounts")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="mt_login", referencedColumnName="mt_login")
+     * })
+     */
+    private $mtLogin;
+
+
+}

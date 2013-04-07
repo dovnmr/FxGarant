@@ -1,0 +1,152 @@
+<?php
+
+namespace FX\FxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PammAccount
+ *
+ * @ORM\Table(name="pamm_account")
+ * @ORM\Entity
+ */
+class PammAccount
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="responsibility", type="integer", nullable=true)
+     */
+    private $responsibility;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regdate", type="datetime", nullable=true)
+     */
+    private $regdate;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="capital", type="float", nullable=true)
+     */
+    private $capital;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="min_capital", type="float", nullable=true)
+     */
+    private $minCapital;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status_pamm", type="integer", nullable=true)
+     */
+    private $statusPamm;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="drawdown", type="integer", nullable=true)
+     */
+    private $drawdown;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="max_drawdown", type="integer", nullable=true)
+     */
+    private $maxDrawdown;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="current_capital", type="float", nullable=true)
+     */
+    private $currentCapital;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="investment", type="float", nullable=true)
+     */
+    private $investment;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="insured_summ", type="float", nullable=true)
+     */
+    private $insuredSumm;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="oppened_tickets", type="integer", nullable=true)
+     */
+    private $oppenedTickets;
+
+    /**
+     * @var \InvAccount
+     *
+     * @ORM\ManyToOne(targetEntity="InvAccount")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_inv_account_trader", referencedColumnName="id")
+     * })
+     */
+    private $idInvAccountTrader;
+
+    /**
+     * @var \Offers
+     *
+     * @ORM\ManyToOne(targetEntity="Offers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="offer_id", referencedColumnName="id")
+     * })
+     */
+    private $offer;
+
+    /**
+     * @var \Users
+     *
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
+
+    /**
+     * @var \MtAccounts
+     *
+     * @ORM\ManyToOne(targetEntity="MtAccounts")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="mt_login", referencedColumnName="mt_login")
+     * })
+     */
+    private $mtLogin;
+
+    /**
+     * @var \TypesPamm
+     *
+     * @ORM\ManyToOne(targetEntity="TypesPamm")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_pamm", referencedColumnName="id")
+     * })
+     */
+    private $typePamm;
+
+
+}

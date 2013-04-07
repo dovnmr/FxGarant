@@ -1,0 +1,143 @@
+<?php
+
+namespace FX\FxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MtAccounts
+ *
+ * @ORM\Table(name="mt_accounts")
+ * @ORM\Entity
+ */
+class MtAccounts
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mt_login", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $mtLogin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status_mt", type="string", length=16, nullable=true)
+     */
+    private $statusMt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="leverage", type="integer", nullable=true)
+     */
+    private $leverage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="agent", type="integer", nullable=true)
+     */
+    private $agent;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="send_reports", type="integer", nullable=true)
+     */
+    private $sendReports;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="deposit_mt", type="float", nullable=true)
+     */
+    private $depositMt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enable_mt", type="integer", nullable=true)
+     */
+    private $enableMt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enable_change_password", type="integer", nullable=true)
+     */
+    private $enableChangePassword;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enable_read_only", type="integer", nullable=true)
+     */
+    private $enableReadOnly;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="regdate_mt", type="datetime", nullable=true)
+     */
+    private $regdateMt;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="balance", type="float", nullable=true)
+     */
+    private $balance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="string", length=64, nullable=true)
+     */
+    private $comment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pswd", type="string", length=255, nullable=true)
+     */
+    private $pswd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="inv_pswd", type="string", length=255, nullable=true)
+     */
+    private $invPswd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone_pswd", type="string", length=255, nullable=true)
+     */
+    private $phonePswd;
+
+    /**
+     * @var \PartnerGroups
+     *
+     * @ORM\ManyToOne(targetEntity="PartnerGroups")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="group_mt", referencedColumnName="id")
+     * })
+     */
+    private $groupMt;
+
+    /**
+     * @var \Users
+     *
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
+
+
+}

@@ -1,0 +1,178 @@
+<?php
+
+namespace FX\FxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Offers
+ *
+ * @ORM\Table(name="offers")
+ * @ORM\Entity
+ */
+class Offers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="offer_type", type="string", length=15, nullable=true)
+     */
+    private $offerType;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="offer_term", type="date", nullable=true)
+     */
+    private $offerTerm;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="inv_depo", type="integer", nullable=true)
+     */
+    private $invDepo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="risk_division", type="integer", nullable=true)
+     */
+    private $riskDivision;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="profit_division", type="integer", nullable=true)
+     */
+    private $profitDivision;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="reinvestment_posblt", type="boolean", nullable=true)
+     */
+    private $reinvestmentPosblt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="modfct_lock", type="boolean", nullable=true)
+     */
+    private $modfctLock;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_offer", type="float", nullable=true)
+     */
+    private $bonusOffer;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="commision", type="float", nullable=true)
+     */
+    private $commision;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="min_balance", type="float", nullable=true)
+     */
+    private $minBalance;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="min_input", type="float", nullable=true)
+     */
+    private $minInput;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="min_withdraw", type="float", nullable=true)
+     */
+    private $minWithdraw;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="agent_bonus", type="integer", nullable=true)
+     */
+    private $agentBonus;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contact_method", type="string", length=1000, nullable=true)
+     */
+    private $contactMethod;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ts_desc", type="string", length=2000, nullable=true)
+     */
+    private $tsDesc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status_offer", type="integer", nullable=true)
+     */
+    private $statusOffer;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="date_offer", type="integer", nullable=true)
+     */
+    private $dateOffer;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="period_num", type="integer", nullable=true)
+     */
+    private $periodNum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="period_type", type="string", length=15, nullable=true)
+     */
+    private $periodType;
+
+    /**
+     * @var \Users
+     *
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
+
+    /**
+     * @var \ReportLevels
+     *
+     * @ORM\ManyToOne(targetEntity="ReportLevels")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="report_level_id", referencedColumnName="id")
+     * })
+     */
+    private $reportLevel;
+
+
+}

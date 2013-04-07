@@ -1,0 +1,278 @@
+<?php
+
+namespace FX\FxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Users
+ *
+ * @ORM\Table(name="users")
+ * @ORM\Entity
+ */
+class Users
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=255, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username_canonical", type="string", length=255, nullable=false)
+     */
+    private $usernameCanonical;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_canonical", type="string", length=255, nullable=false)
+     */
+    private $emailCanonical;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="enabled", type="boolean", nullable=false)
+     */
+    private $enabled;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="salt", type="string", length=255, nullable=false)
+     */
+    private $salt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone_password", type="string", length=255, nullable=true)
+     */
+    private $phonePassword;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="last_login", type="datetime", nullable=true)
+     */
+    private $lastLogin;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="locked", type="boolean", nullable=false)
+     */
+    private $locked;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="expired", type="boolean", nullable=false)
+     */
+    private $expired;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="expires_at", type="datetime", nullable=true)
+     */
+    private $expiresAt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="confirmation_token", type="string", length=255, nullable=true)
+     */
+    private $confirmationToken;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="password_requested_at", type="datetime", nullable=true)
+     */
+    private $passwordRequestedAt;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="roles", type="array", nullable=false)
+     */
+    private $roles;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="credentials_expired", type="boolean", nullable=false)
+     */
+    private $credentialsExpired;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="credentials_expire_at", type="datetime", nullable=true)
+     */
+    private $credentialsExpireAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_of_register", type="datetime", nullable=false)
+     */
+    private $dateOfRegister;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name_en", type="string", length=30, nullable=false)
+     */
+    private $nameEn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sname_en", type="string", length=30, nullable=false)
+     */
+    private $snameEn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name_native", type="string", length=30, nullable=false)
+     */
+    private $nameNative;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sname_native", type="string", length=30, nullable=false)
+     */
+    private $snameNative;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="patronymic_native", type="string", length=30, nullable=false)
+     */
+    private $patronymicNative;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="birthday", type="date", nullable=false)
+     */
+    private $birthday;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="document_data", type="string", length=300, nullable=false)
+     */
+    private $documentData;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=128, nullable=false)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zip_code", type="string", length=16, nullable=true)
+     */
+    private $zipCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=32, nullable=false)
+     */
+    private $phone;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="reiting", type="float", nullable=false)
+     */
+    private $reiting;
+
+    /**
+     * @var \Cities
+     *
+     * @ORM\ManyToOne(targetEntity="Cities")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     * })
+     */
+    private $city;
+
+    /**
+     * @var \Countries
+     *
+     * @ORM\ManyToOne(targetEntity="Countries")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     * })
+     */
+    private $country;
+
+    /**
+     * @var \Languages
+     *
+     * @ORM\ManyToOne(targetEntity="Languages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="language_id", referencedColumnName="id")
+     * })
+     */
+    private $language;
+
+    /**
+     * @var \UsrDocumentTypes
+     *
+     * @ORM\ManyToOne(targetEntity="UsrDocumentTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="usr_type_document_id", referencedColumnName="id")
+     * })
+     */
+    private $usrTypeDocument;
+
+    /**
+     * @var \UsrReferences
+     *
+     * @ORM\ManyToOne(targetEntity="UsrReferences")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="usr_reference_id", referencedColumnName="id")
+     * })
+     */
+    private $usrReference;
+
+
+}
